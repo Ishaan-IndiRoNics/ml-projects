@@ -5,8 +5,6 @@ from tensorflow.keras import layers
 from tensorflow.keras import losses
 
 dataset = tf.keras.utils.get_file(origin="https://storage.googleapis.com/download.tensorflow.org/data/stack_overflow_16k.tar.gz", fname="stack_overflow_16k", extract=True, cache_dir='.', cache_subdir='')
-dataset_dir = os.path.dirname(dataset)
-train_dir = os.path.join(dataset_dir, 'train')
 batch_size = 32
 seed = 42
 raw_train_ds = tf.keras.utils.text_dataset_from_directory('train', batch_size=batch_size, validation_split=0.1, subset='training', seed=seed)
